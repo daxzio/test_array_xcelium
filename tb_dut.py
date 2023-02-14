@@ -63,9 +63,12 @@ async def test_array(dut):
     await tb.cr.wait_clkn()
     await tb.cr.wait_clkn()
     
-    assert tb.cr.pixel0.value == 0xdc
-    assert tb.cr.pixel1.value == 0xba
+    print(f"pixel2 = {tb.cr.pixel2.value}")
+    print(f"pixel1 = {tb.cr.pixel1.value}")
+    print(f"pixel0 = {tb.cr.pixel0.value}")
     assert tb.cr.pixel2.value == 0x98
+    assert tb.cr.pixel1.value == 0xba
+    assert tb.cr.pixel0.value == 0xdc
 
     await tb.cr.end_test()
   
